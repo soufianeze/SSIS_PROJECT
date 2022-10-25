@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{B4A3838A-23A6-46C9-AECC-C28069C55EE1}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{4897965C-8F0A-47D1-83F9-E5609A7DB406}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -51,6 +51,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D6BA0465-839C-42A2-ACF6-61BADF943086}"
+      DTS:From="Package\Tâche de flux de données"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Tâche de script" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -62,7 +72,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="201.333333333334,42.6666666666667"
           Id="Package\Tâche de flux de données"
@@ -71,6 +81,40 @@
           Size="152,42.6666666666667"
           Id="Package\Tâche de script"
           TopLeft="71.8749989289791,138.894739456454" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="158.791665800537,76.1929830871901">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.9166668715576,62.7017563692639"
+              Start="0,0"
+              End="-10.9166668715576,55.2017563692639">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.350878184632" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.350878184632"
+                    Point2="0,31.350878184632"
+                    Point3="-4,31.350878184632" />
+                  <mssgle:LineSegment
+                    End="-6.91666687155757,31.350878184632" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.91666687155757,31.350878184632"
+                    Point2="-10.9166668715576,31.350878184632"
+                    Point3="-10.9166668715576,35.350878184632" />
+                  <mssgle:LineSegment
+                    End="-10.9166668715576,55.2017563692639" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
