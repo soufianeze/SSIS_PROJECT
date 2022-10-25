@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{4897965C-8F0A-47D1-83F9-E5609A7DB406}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{29842876-9783-47BB-AF73-03A56935F9FC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -50,6 +50,18 @@
           Language="CSharp" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche de service Web"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Tâche de service Web"
+      DTS:DTSID="{398FE61B-897C-48C1-9C84-44DFA4CC9000}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche de service Web"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData />
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -60,6 +72,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Tâche de script" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3508AAA8-F354-4EBB-B7A3-269013ED05B7}"
+      DTS:From="Package\Tâche de script"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Tâche de service Web" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -72,7 +92,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="201.333333333334,42.6666666666667"
           Id="Package\Tâche de flux de données"
@@ -107,6 +127,44 @@
                     Point3="-10.9166668715576,35.350878184632" />
                   <mssgle:LineSegment
                     End="-10.9166668715576,55.2017563692639" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="185.333333333334,42.6666666666667"
+          Id="Package\Tâche de service Web"
+          TopLeft="104.374998444691,230.578951708498" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="147.874998928979,181.561406123121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.1666661823789,49.0175455853772"
+              Start="0,0"
+              End="49.1666661823789,41.5175455853772">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5087727926886" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5087727926886"
+                    Point2="0,24.5087727926886"
+                    Point3="4,24.5087727926886" />
+                  <mssgle:LineSegment
+                    End="45.1666661823789,24.5087727926886" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.1666661823789,24.5087727926886"
+                    Point2="49.1666661823789,24.5087727926886"
+                    Point3="49.1666661823789,28.5087727926886" />
+                  <mssgle:LineSegment
+                    End="49.1666661823789,41.5175455853772" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
