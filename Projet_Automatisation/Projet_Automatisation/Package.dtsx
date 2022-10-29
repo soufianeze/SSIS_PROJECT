@@ -11,12 +11,27 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{393A43CB-F931-4D7F-B464-6A8AB830D53F}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{B1CE8D32-384D-4138-9936-4A41F7805EE4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'expression"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Tâche d'expression"
+      DTS:DTSID="{80F55DF9-CA03-4153-A844-5E50CDF57D28}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'expression"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Tâche de flux de données"
       DTS:CreationName="Microsoft.Pipeline"
@@ -60,6 +75,18 @@
         </DataProfilingTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche FTP"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="Tâche FTP"
+      DTS:DTSID="{A6374BBE-01F7-4F2B-8A8D-49CCC0C67EB7}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche FTP"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData />
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -70,6 +97,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Tâche de profilage des données" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{592AEE10-D4B1-4FAD-9AE5-067F8F5C991F}"
+      DTS:From="Package\Tâche de profilage des données"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Tâche d'expression" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{7D5CA923-E54A-44F6-A328-0730522FC916}"
+      DTS:From="Package\Tâche d'expression"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Tâche FTP" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -82,7 +125,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="201.333333333334,42.6666666666667"
           Id="Package\Tâche de flux de données"
@@ -117,6 +160,82 @@
                     Point3="133.458331573134,19.6140357831619" />
                   <mssgle:LineSegment
                     End="133.458331573134,23.7280715663238" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Tâche d'expression"
+          TopLeft="274.374995911494,196.36842474878" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="292.24999737367,150.087721320181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.1249985378239,46.2807034285993"
+              Start="0,0"
+              End="68.1249985378239,38.7807034285993">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1403517142997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1403517142997"
+                    Point2="0,23.1403517142997"
+                    Point3="4,23.1403517142997" />
+                  <mssgle:LineSegment
+                    End="64.1249985378239,23.1403517142997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.1249985378239,23.1403517142997"
+                    Point2="68.1249985378239,23.1403517142997"
+                    Point3="68.1249985378239,27.1403517142997" />
+                  <mssgle:LineSegment
+                    End="68.1249985378239,38.7807034285993" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Tâche FTP"
+          TopLeft="109.374998370185,210.385968621308" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="274.374995911494,217.701758082113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32.9999975413084,14.0175438725277"
+              Start="0,0"
+              End="-25.4999975413084,14.0175438725277">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-12.4999987706542,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.4999987706542,0"
+                    Point2="-16.4999987706542,0"
+                    Point3="-16.4999987706542,4" />
+                  <mssgle:LineSegment
+                    End="-16.4999987706542,10.0175438725277" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.4999987706542,10.0175438725277"
+                    Point2="-16.4999987706542,14.0175438725277"
+                    Point3="-20.4999987706542,14.0175438725277" />
+                  <mssgle:LineSegment
+                    End="-25.4999975413084,14.0175438725277" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
